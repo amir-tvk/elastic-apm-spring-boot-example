@@ -48,4 +48,10 @@ services:
       kibana:
         condition: service_healthy
 
-
+  postgres:
+    image: postgres:latest
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=postgres
+    ports:
+      - "127.0.0.1:5432:5432"
